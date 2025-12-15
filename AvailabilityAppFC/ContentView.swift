@@ -39,10 +39,16 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding()
                 
+        VStack{
+            DatePicker("", selection: $wakeUp, in: Date.now..., displayedComponents: .date)
+                .labelsHidden()
+    }
+        .frame(width: 100, height: 100, alignment: .top)
+        HStack(spacing: 50){
+            Text("1st Period")
+            Text("2nd Period")
+            Text("3rd Period")
+            Text("4th Period")
+        ADayView()
         }
     }
-}
-
-#Preview {
-    ContentView()
-}
