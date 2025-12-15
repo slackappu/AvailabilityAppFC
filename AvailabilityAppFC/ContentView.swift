@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var wakeUp = Date.now
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        VStack{
+            DatePicker("", selection: $wakeUp, in: Date.now..., displayedComponents: .date)
+                .labelsHidden()
+    }
+        .frame(width: 100, height: 100, alignment: .top)
     }
 }
 
