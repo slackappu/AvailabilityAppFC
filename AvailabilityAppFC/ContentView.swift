@@ -9,17 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     @State var wakeUp = Date.now
+    @State var colorDay: Bool = true
     var body: some View {
-        VStack{
-            DatePicker("", selection: $wakeUp, in: Date.now..., displayedComponents: .date)
-                .labelsHidden()
-    }
-        .frame(width: 100, height: 100, alignment: .top)
-        HStack(spacing: 50){
-            Text("1st Period")
-            Text("2nd Period")
-            Text("3rd Period")
-            Text("4th Period")
-        ADayView()
+        ZStack{
+            VStack{
+                DatePicker("", selection: $wakeUp, in: Date.now..., displayedComponents: .date)
+                    .labelsHidden()
+                ADayView()
+            }
+            VStack{
+                Circle()
+                    .frame(width: 50, height: 50, alignment: .topTrailing)
+            }
+            .foregroundStyle(colorDay ? .orange : .brown)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+            .padding()
+                
+            }
         }
     }
