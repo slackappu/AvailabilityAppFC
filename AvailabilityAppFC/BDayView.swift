@@ -18,27 +18,31 @@ struct BDayView: View {
                 VStack(){
                     Text("Finlayson - Science")
                     Text("Moehrlin - Science")
-                    Text("Wiggin - English")
-                    Text("Hirschauer - Math")
+                    Text("Burns - English")
+                    Text("Wold - Math")
+                    Text("Ludois - Math")
                 }
                 VStack(){
-                    Text("Heintzelman - Science")
-                    Text("Spiering - English")
-                    Text("Manthey - English")
-                    Text("Olsen - Math")
-                    Text("Justeau - French")
+                    Text("Doherty - Science")
+                    Text("Poulos - English")
+                    Text("Dubinski - English")
+                    Text("Wilk - Math")
+                    Text("Blazek - SS")
                 }
                 VStack(){
-                    Text("Cassidy - Science (A/B Lunch)")
-                    Text("Michelin - English (A/B Lunch)")
-                    Text("Ballarini - Math (A/B Lunch)")
-                    Text("Kiepura - Math (B/C Lunch)")
+                    Text("Johnson - Science (B/C Lunch)")
+                    Text("Morley - Science (A/B Lunch)")
+                    Text("Brownley - English (A/B Lunch)")
+                    Text("Silver - Math (A/C Lunch)")
+                    Text("Skarb - Math (B/C Lunch)")
+                    Text("Bravo - Spanish (B/C Lunch)")
                 }
                 VStack(){
-                    Text("Pataky - Science")
-                    Text("Connell - English")
-                    Text("Carlisle - Math")
-                    Text("Decaluwe - Social Studies")
+                    Text("Caccamo - Science")
+                    Text("Barry - Science")
+                    Text("Yalda - Math")
+                    Text("Kalchbrenner - English")
+                    Text("Treutler - Spanish")
                 }
             }
         }
