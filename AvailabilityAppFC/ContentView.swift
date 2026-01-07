@@ -20,7 +20,22 @@ struct ContentView: View {
             .padding()
                 
             }
+        
         }
+    enum Subject {
+        case Science
+        case History
+        case Math
+        case English
+        case SocialStudies
+        case Spanish
+        case French
+    }
+        
+        
+        
+    
+    
     }
 
 #Preview {
