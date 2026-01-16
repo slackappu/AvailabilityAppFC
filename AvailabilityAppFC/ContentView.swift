@@ -14,12 +14,19 @@ struct ContentView: View {
             VStack{
                 Circle()
                     .frame(width: 50, height: 50, alignment: .topTrailing)
+//                Button {
+//                    fetchCSVData()
+//                } label: {
+//                    Text("test")
+//                }
+
             }
             .foregroundStyle(colorDay ? .orange : .brown)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding()
                 
             }
+        
         }
     }
 
