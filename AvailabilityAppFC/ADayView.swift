@@ -8,15 +8,43 @@ import SwiftUI
 struct ADayView: View {
     var body: some View {
         HStack(spacing: 25){
-            Text("1st Period")
-            Text("2nd Period")
-            Text("3rd Period")
-            Text("4th Period")
+            VStack{
+                Text("1st Block")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding()
+                    .underline()
+                Text("(8:20-9:45)")
+                    .font(.title2)
+            }
+            VStack{
+                Text("2nd Block")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding()
+                    .underline()
+                Text("(9:50-11:20)")
+                    .font(.title2)
+            }
+            VStack{
+                Text("3rd Block")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding()
+                    .underline()
+                Text("(11:25-1:40)")
+                    .font(.title2)
+            }
+            VStack{
+                Text("4th Block")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding()
+                    .underline()
+                Text("(1:45-3:10)")
+                    .font(.title2)
+            }
         }
-        .font(.largeTitle)
-        .bold()
-        .padding()
-        .underline()
         
         HStack(){
             VStack(){
