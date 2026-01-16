@@ -18,10 +18,9 @@ struct ContentView: View {
             .foregroundStyle(colorDay ? .orange : .brown)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding()
-                
-            }
-        
         }
+    }
+    
     enum Subject {
         case Science
         case History
@@ -31,12 +30,14 @@ struct ContentView: View {
         case Spanish
         case French
     }
-        
-        
-        
-    
-    
-    }
+}
+
+
+
+
+
+
+
 
 #Preview {
     ContentView()
