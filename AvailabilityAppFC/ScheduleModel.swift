@@ -43,6 +43,24 @@ let schoolHolidays: [String] = [
     
 ]
 
+func isSchoolDay(_ date: Date) -> Bool {
+        let calendar = Calendar.current
+        let weekday = calendar.component(.weekday, from: date)
+        
+        if weekday == 1 || weekday == 7 {
+            return false
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        let dateString = dateFormatter.string(from: date)
+        
+        if schoolHolidays.contains(dateString) {
+            return false
+        }
+        
+        return true
+    }
 
 
 
