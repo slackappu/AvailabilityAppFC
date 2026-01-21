@@ -17,10 +17,10 @@ struct ADayView: View {
             }
             
             GridRow {
-                blockTime("(8:20–9:45)")
-                blockTime("(9:50–11:20)")
-                blockTime("(11:25–1:40)")
-                blockTime("(1:45–3:10)")
+                blockTime("(8:20AM–9:45AM)")
+                blockTime("(9:50AM–11:20AM)")
+                blockTime("(11:25AM–1:40PM)")
+                blockTime("(1:45PM–3:10PM)")
             }
             
             GridRow {

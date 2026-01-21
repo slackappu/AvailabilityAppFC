@@ -7,44 +7,143 @@
 import SwiftUI
 struct BDayView: View {
     var body: some View {
-        VStack(){
-            HStack(spacing: 50){
-                Text("5th Period")
-                Text("6th Period")
-                Text("7th Period")
-                Text("8th Period")
+        Grid(horizontalSpacing: 25, verticalSpacing: 16) {
+            
+            GridRow {
+                blockTitle("5th Block")
+                blockTitle("6th Block")
+                blockTitle("7th Block")
+                blockTitle("8th Block")
             }
-            HStack(){
-                VStack(){
-                    Text("Finlayson - Science")
-                    Text("Moehrlin - Science")
-                    Text("Burns - English")
-                    Text("Wold - Math")
-                    Text("Ludois - Math")
-                }
-                VStack(){
-                    Text("Doherty - Science")
-                    Text("Poulos - English")
-                    Text("Dubinski - English")
-                    Text("Wilk - Math")
-                    Text("Blazek - SS")
-                }
-                VStack(){
-                    Text("Johnson - Science (B/C Lunch)")
-                    Text("Morley - Science (A/B Lunch)")
-                    Text("Brownley - English (A/B Lunch)")
-                    Text("Silver - Math (A/C Lunch)")
-                    Text("Skarb - Math (B/C Lunch)")
-                    Text("Bravo - Spanish (B/C Lunch)")
-                }
-                VStack(){
-                    Text("Caccamo - Science")
-                    Text("Barry - Science")
-                    Text("Yalda - Math")
-                    Text("Kalchbrenner - English")
-                    Text("Treutler - Spanish")
-                }
+            
+            GridRow {
+                blockTime("(8:20AM–9:45AM)")
+                blockTime("(9:50AM–11:20AM)")
+                blockTime("(11:25AM–1:40PM)")
+                blockTime("(1:45PM–3:10PM)")
+            }
+            
+            GridRow {
+                classList([
+                    "Finlayson - Science",
+                    "Moehrlin - Science",
+                    "Burns - English",
+                    "Wold - Math",
+                    "Ludois - Math",
+                ])
+                
+                classList([
+                    "Doherty - Science",
+                    "Poulos - English",
+                    "Dubinski - English",
+                    "Wilk - Math",
+                    "Blazek - SS"
+                ])
+                
+                classList([
+                    "Johnson - Science (B/C Lunch)",
+                    "Morley - Science (A/B Lunch)",
+                    "Brownley - English (A/B Lunch)",
+                    "Silver - Math (A/C Lunch)",
+                    "Skarb - Math (B/C Lunch)",
+                    "Bravo - Spanish (B/C Lunch)"
+                ])
+                
+                classList([
+                    "Caccamo - Science",
+                    "Barry - Science",
+                    "Yalda - Math",
+                    "Kalchbrenner - English",
+                    "Treutler - Spanish"
+                ])
             }
         }
+        .padding()
+    }
+    
+    
+    
+    //                         ||||||
+    // needed for organization vvvvvv
+    
+    @ViewBuilder
+    func blockTitle(_ text: String) -> some View {
+        Text(text)
+            .font(.largeTitle)
+            .bold()
+            .underline()
+            .frame(maxWidth: .infinity)
+    }
+    
+    @ViewBuilder
+    func blockTime(_ text: String) -> some View {
+        Text(text)
+            .font(.title2)
+            .frame(maxWidth: .infinity)
+    }
+    
+    @ViewBuilder
+    func classList(_ classes: [String]) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            ForEach(classes, id: \.self) { item in
+                Text(item)
+                    .font(.title3)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .topLeading)
     }
 }
+
+#Preview {
+    BDayView()
+}
+
+
+
+
+
+
+
+
+
+//        VStack(){
+//            HStack(spacing: 50){
+//                Text("5th Period")
+//                Text("6th Period")
+//                Text("7th Period")
+//                Text("8th Period")
+//            }
+//            HStack(){
+//                VStack(){
+//                    Text("Finlayson - Science")
+//                    Text("Moehrlin - Science")
+//                    Text("Burns - English")
+//                    Text("Wold - Math")
+//                    Text("Ludois - Math")
+//                }
+//                VStack(){
+//                    Text("Doherty - Science")
+//                    Text("Poulos - English")
+//                    Text("Dubinski - English")
+//                    Text("Wilk - Math")
+//                    Text("Blazek - SS")
+//                }
+//                VStack(){
+//                    Text("Johnson - Science (B/C Lunch)")
+//                    Text("Morley - Science (A/B Lunch)")
+//                    Text("Brownley - English (A/B Lunch)")
+//                    Text("Silver - Math (A/C Lunch)")
+//                    Text("Skarb - Math (B/C Lunch)")
+//                    Text("Bravo - Spanish (B/C Lunch)")
+//                }
+//                VStack(){
+//                    Text("Caccamo - Science")
+//                    Text("Barry - Science")
+//                    Text("Yalda - Math")
+//                    Text("Kalchbrenner - English")
+//                    Text("Treutler - Spanish")
+//                }
+//            }
+//        }
+//    }
+//}
