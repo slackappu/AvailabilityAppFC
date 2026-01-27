@@ -62,6 +62,23 @@ func isSchoolDay(_ date: Date) -> Bool {
         return true
     }
 
-
+func isADay(for date: Date) -> Bool {
+    let calendar = Calendar.current
+    
+    let startDate = calendar.date(from:DateComponents(year: 2025, month: 8, day: 13))!
+    
+    var current = startDate
+    var schoolDayCount = 0
+    
+    while current <= date {
+        if isSchoolDay(current) {
+            schoolDayCount += 1
+        }
+        current = calendar.date(byAdding: .day, value: 1, to: current)!
+    }
+    
+    return schoolDayCount % 2 == 0
+    
+}
 
  

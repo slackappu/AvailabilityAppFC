@@ -7,8 +7,22 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             VStack{
-                DatePicker("", selection: $wakeUp, in: Date.now..., displayedComponents: .date)
-                    .labelsHidden()
+                HStack{
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "arrow.left")
+                    }
+
+                    DatePicker("", selection: $wakeUp, in: Date.now..., displayedComponents: .date)
+                        .labelsHidden()
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "arrow.right")
+                    }
+
+                }
                 ADayView()
             }
             VStack{
@@ -21,7 +35,7 @@ struct ContentView: View {
 //                }
 
             }
-            .foregroundStyle(colorDay ? .orange : .brown)
+            .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding()
                 
