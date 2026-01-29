@@ -10,10 +10,10 @@ struct BDayView: View {
         Grid(horizontalSpacing: 25, verticalSpacing: 16) {
             
             GridRow {
-                blockTitle("5th Block")
-                blockTitle("6th Block")
-                blockTitle("7th Block")
-                blockTitle("8th Block")
+                blockTitle("Block 5")
+                blockTitle("Block 6")
+                blockTitle("Block 7")
+                blockTitle("Block 8")
             }
             
             GridRow {
@@ -78,7 +78,7 @@ struct BDayView: View {
     @ViewBuilder
     func blockTime(_ text: String) -> some View {
         Text(text)
-            .font(.title2)
+            .font(.title)
             .frame(maxWidth: .infinity)
     }
     
