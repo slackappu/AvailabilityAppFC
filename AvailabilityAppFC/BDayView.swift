@@ -6,6 +6,7 @@
 //
 import SwiftUI
 struct BDayView: View {
+    @Binding var wakeUp: Date
     var body: some View {
         Grid(horizontalSpacing: 25, verticalSpacing: 16) {
             
@@ -94,9 +95,9 @@ struct BDayView: View {
     }
 }
 
-#Preview {
-    BDayView()
-}
+//#Preview {
+//    BDayView(wakeUp: $wakeUp)
+//}
 
 
 
