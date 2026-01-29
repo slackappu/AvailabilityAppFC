@@ -74,7 +74,7 @@ struct ADayView: View {
     @ViewBuilder
     func blockTime(_ text: String) -> some View {
         Text(text)
-            .font(.title2)
+            .font(.title)
             .frame(maxWidth: .infinity)
     }
     @ViewBuilder
