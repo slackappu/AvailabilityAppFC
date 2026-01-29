@@ -9,21 +9,25 @@ struct ContentView: View {
             VStack{
                 HStack{
                     Button {
-                        
+                    changeDay(by: -1)
                     } label: {
                         Image(systemName: "arrow.left")
                     }
 
-                    DatePicker("", selection: $wakeUp, in: Date.now..., displayedComponents: .date)
+                    DatePicker("", selection: $wakeUp, displayedComponents: .date)
                         .labelsHidden()
                     Button {
-                        
+                        changeDay(by: 1)
                     } label: {
                         Image(systemName: "arrow.right")
                     }
 
                 }
-                ADayView()
+                if isADay(for: wakeUp) {
+                    ADayView()
+                } else {
+                    BDayView()
+                }
             }
             VStack{
                 Circle()
@@ -50,7 +54,17 @@ struct ContentView: View {
         case Spanish
         case French
     }
+    
+    func changeDay(by value: Int) {
+        if let newDate = Calendar.current.date(byAdding: .day, value: value, to: wakeUp) {
+            wakeUp = newDate
+        }
+    }
+    
 }
+
+
+
 
 
 
