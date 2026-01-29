@@ -5,23 +5,24 @@ struct ContentView: View {
     @State var wakeUp = Date.now
     @State var colorDay = true
     var body: some View {
-        ZStack{
-            VStack{
-                HStack{
+        
+        ZStack {
+            VStack {
+                HStack {
                     Button {
-                    changeDay(by: -1)
+                        changeDay(by: -1)
                     } label: {
                         Image(systemName: "arrow.left")
                     }
-
+                    
                     DatePicker("", selection: $wakeUp, displayedComponents: .date)
                         .labelsHidden()
+                    
                     Button {
                         changeDay(by: 1)
                     } label: {
                         Image(systemName: "arrow.right")
                     }
-
                 }
                 .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
                 // switches data based on whether its an A day or not
@@ -30,17 +31,14 @@ struct ContentView: View {
                 } else {
                     BDayView(wakeUp: $wakeUp)
                 }
-                    
+                
+                Spacer() // optional, but helps push content upward
             }
-            VStack{
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            
+            VStack {
                 Circle()
-                    .frame(width: 50, height: 50, alignment: .topTrailing)
-//                Button {
-//                    fetchCSVData()
-//                } label: {
-//                    Text("test")
-//                }
-
+                    .frame(width: 50, height: 50)
             }
             .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)

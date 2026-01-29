@@ -9,7 +9,7 @@ struct BDayView: View {
     @Binding var wakeUp: Date
     var body: some View {
         Grid(horizontalSpacing: 25, verticalSpacing: 16) {
-            
+    
             GridRow {
                 blockTitle("Block 5")
                 blockTitle("Block 6")
@@ -23,7 +23,6 @@ struct BDayView: View {
                 blockTime("(11:25AM–1:40PM)")
                 blockTime("(1:45PM–3:10PM)")
             }
-            
             GridRow {
                 classList([
                     "Finlayson - Science",
