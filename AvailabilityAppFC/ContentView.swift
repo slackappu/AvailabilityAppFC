@@ -5,23 +5,24 @@ struct ContentView: View {
     @State var wakeUp = Date.now
     @State var colorDay = true
     var body: some View {
-        ZStack{
-            VStack{
-                HStack{
+        
+        ZStack {
+            VStack {
+                HStack {
                     Button {
-                    changeDay(by: -1)
+                        changeDay(by: -1)
                     } label: {
                         Image(systemName: "arrow.left")
                     }
-
+                    
                     DatePicker("", selection: $wakeUp, displayedComponents: .date)
                         .labelsHidden()
+                    
                     Button {
                         changeDay(by: 1)
                     } label: {
                         Image(systemName: "arrow.right")
                     }
-
                 }
                 // switches data based on whether its an A day or not
                 if isADay(for: wakeUp) {
@@ -29,21 +30,70 @@ struct ContentView: View {
                 } else {
                     BDayView()
                 }
-                    
+                
+                Spacer() // optional, but helps push content upward
             }
-            VStack{
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            
+            VStack {
                 Circle()
-                    .frame(width: 50, height: 50, alignment: .topTrailing)
-//                Button {
-//                    fetchCSVData()
-//                } label: {
-//                    Text("test")
-//                }
-
+                    .frame(width: 50, height: 50)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding()
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //        ZStack{
+        //            VStack{
+        //                HStack{
+        //                    Button {
+        //                    changeDay(by: -1)
+        //                    } label: {
+        //                        Image(systemName: "arrow.left")
+        //                    }
+        //
+        //                    DatePicker("", selection: $wakeUp, displayedComponents: .date)
+        //                        .labelsHidden()
+        //                    Button {
+        //                        changeDay(by: 1)
+        //                    } label: {
+        //                        Image(systemName: "arrow.right")
+        //                    }
+        //
+        //                }
+        //                // switches data based on whether its an A day or not
+        //                if isADay(for: wakeUp) {
+        //                    ADayView()
+        //                } else {
+        //                    BDayView()
+        //                }
+        //
+        //            }
+        //            VStack{
+        //                Circle()
+        //                    .frame(width: 50, height: 50, alignment: .topTrailing)
+        //                Button {
+        //                    fetchCSVData()
+        //                } label: {
+        //                    Text("test")
+        //                }
+        //
+        //            }
+        //            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+        //            .padding()
+//    }
+        
         .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
         .animation(.easeInOut(duration: 0.25), value: wakeUp)
 
