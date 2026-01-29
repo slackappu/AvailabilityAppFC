@@ -10,10 +10,10 @@ struct ADayView: View {
         Grid(horizontalSpacing: 25, verticalSpacing: 16) {
             
             GridRow {
-                blockTitle("1st Block")
-                blockTitle("2nd Block")
-                blockTitle("3rd Block")
-                blockTitle("4th Block")
+                blockTitle("Block 1")
+                blockTitle("Block 2")
+                blockTitle("Block 3")
+                blockTitle("Block 4")
             }
             
             GridRow {
@@ -29,7 +29,6 @@ struct ADayView: View {
                     "Wiggin - English",
                     "Hirschauer - Math"
                 ])
-                
                 classList([
                     "Heintzelman - Science",
                     "Spiering - English",
@@ -37,14 +36,12 @@ struct ADayView: View {
                     "Olsen - Math",
                     "Justeau - French"
                 ])
-                
                 classList([
                     "Cassidy - Science (A/B Lunch)",
                     "Michelin - English (A/B Lunch)",
                     "Ballarini - Math (A/B Lunch)",
                     "Kiepura - Math (B/C Lunch)"
                 ])
-                
                 classList([
                     "Pataky - Science",
                     "Connell - English",
@@ -55,6 +52,11 @@ struct ADayView: View {
         }
         .padding()
     }
+    
+    
+    
+    
+    
     
     
     
@@ -69,14 +71,12 @@ struct ADayView: View {
             .underline()
             .frame(maxWidth: .infinity)
     }
-    
     @ViewBuilder
     func blockTime(_ text: String) -> some View {
         Text(text)
             .font(.title2)
             .frame(maxWidth: .infinity)
     }
-    
     @ViewBuilder
     func classList(_ classes: [String]) -> some View {
         VStack(alignment: .leading, spacing: 8) {
