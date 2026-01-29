@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var wakeUp = Date.now
-    @State var colorDay: Bool = true
+    @State var colorDay = true
     var body: some View {
         ZStack{
             VStack{
@@ -23,11 +23,13 @@ struct ContentView: View {
                     }
 
                 }
+                // switches data based on whether its an A day or not
                 if isADay(for: wakeUp) {
                     ADayView()
                 } else {
                     BDayView()
                 }
+                    
             }
             VStack{
                 Circle()
@@ -39,10 +41,12 @@ struct ContentView: View {
 //                }
 
             }
-            .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding()
         }
+        .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
+        .animation(.easeInOut(duration: 0.25), value: wakeUp)
+
     }
     
     enum Subject {
