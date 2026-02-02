@@ -14,15 +14,21 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "arrow.left")
                     }
+                    .font(.largeTitle)
+                    .padding()
                     
                     DatePicker("", selection: $wakeUp, displayedComponents: .date)
                         .labelsHidden()
+                        .scaleEffect(1.5)
+                        .frame(width: 150)
                     
                     Button {
                         changeDay(by: 1)
                     } label: {
                         Image(systemName: "arrow.right")
                     }
+                    .font(.largeTitle)
+                    .padding()
                 }
                 // switches data based on whether its an A day or not
                 if isADay(for: wakeUp) {
