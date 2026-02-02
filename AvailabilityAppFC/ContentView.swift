@@ -5,7 +5,6 @@ struct ContentView: View {
     @State var wakeUp = Date.now
     @State var colorDay = true
     var body: some View {
-        
         ZStack {
             VStack {
                 HStack {
@@ -30,16 +29,17 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .padding()
                 }
+                
                 // switches data based on whether its an A day or not
                 if isADay(for: wakeUp) {
                     ADayView()
                 } else {
                     BDayView()
                 }
-                
-                Spacer()
+            Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            
             
             VStack {
                 Circle()
@@ -50,7 +50,6 @@ struct ContentView: View {
         }
         .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
         .animation(.easeInOut(duration: 0.25), value: wakeUp)
-
     }
     
     enum Subject {
@@ -68,16 +67,7 @@ struct ContentView: View {
             wakeUp = newDate
         }
     }
-    
 }
-
-
-
-
-
-
-
-
 
 
 
