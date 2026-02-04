@@ -95,6 +95,4 @@ struct BDayView: View {
         .frame(maxWidth: .infinity, alignment: .topLeading)
     }}
 
-#Preview {
-    BDayView()
-}
+
