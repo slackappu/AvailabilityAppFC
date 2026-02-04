@@ -24,12 +24,12 @@ struct ContentView: View {
                         Image(systemName: "arrow.right")
                     }
                 }
-                .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
+                .foregroundStyle(isADay(for: wakeUp) ? .brown : .orange)
                 // switches data based on whether its an A day or not
                 if isADay(for: wakeUp) {
-                    ADayView(wakeUp: $wakeUp)
-                } else {
                     BDayView(wakeUp: $wakeUp)
+                } else {
+                    ADayView(wakeUp: $wakeUp)
                 }
                 
                 Spacer() // optional, but helps push content upward
@@ -40,7 +40,7 @@ struct ContentView: View {
                 Circle()
                     .frame(width: 50, height: 50)
             }
-            .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
+            .foregroundStyle(isADay(for: wakeUp) ? .brown : .orange)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding()
         }
