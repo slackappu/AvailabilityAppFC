@@ -9,14 +9,13 @@ struct BDayView: View {
     @Binding var wakeUp: Date
     var body: some View {
         Grid(horizontalSpacing: 25, verticalSpacing: 16) {
-    
+            
             GridRow {
                 blockTitle("Block 5")
                 blockTitle("Block 6")
                 blockTitle("Block 7")
                 blockTitle("Block 8")
             }
-            
             GridRow {
                 blockTime("(8:20AM–9:45AM)")
                 blockTime("(9:50AM–11:20AM)")
@@ -30,8 +29,7 @@ struct BDayView: View {
                     "Burns - English",
                     "Wold - Math",
                     "Ludois - Math",
-                ])
-                
+            ])
                 classList([
                     "Doherty - Science",
                     "Poulos - English",
@@ -39,7 +37,6 @@ struct BDayView: View {
                     "Wilk - Math",
                     "Blazek - SS"
                 ])
-                
                 classList([
                     "Johnson - Science (B/C Lunch)",
                     "Morley - Science (A/B Lunch)",
@@ -48,23 +45,28 @@ struct BDayView: View {
                     "Skarb - Math (B/C Lunch)",
                     "Bravo - Spanish (B/C Lunch)"
                 ])
-                
                 classList([
                     "Caccamo - Science",
                     "Barry - Science",
                     "Yalda - Math",
                     "Kalchbrenner - English",
                     "Treutler - Spanish"
-                ])
-            }
-        }
+                ])}}
         .padding()
     }
     
     
     
+    
+    
+    
+    
     //                         ||||||
     // needed for organization vvvvvv
+    //
+    
+    
+    
     
     @ViewBuilder
     func blockTitle(_ text: String) -> some View {
@@ -81,6 +83,7 @@ struct BDayView: View {
             .font(.title)
             .frame(maxWidth: .infinity)
     }
+
     
     @ViewBuilder
     func classList(_ classes: [String]) -> some View {
@@ -88,62 +91,10 @@ struct BDayView: View {
             ForEach(classes, id: \.self) { item in
                 Text(item)
                     .font(.title3)
-            }
-        }
+            }}
         .frame(maxWidth: .infinity, alignment: .topLeading)
-    }
+    }}
+
+#Preview {
+    BDayView()
 }
-
-//#Preview {
-//    BDayView(wakeUp: $wakeUp)
-//}
-
-
-
-
-
-
-
-
-
-//        VStack(){
-//            HStack(spacing: 50){
-//                Text("5th Period")
-//                Text("6th Period")
-//                Text("7th Period")
-//                Text("8th Period")
-//            }
-//            HStack(){
-//                VStack(){
-//                    Text("Finlayson - Science")
-//                    Text("Moehrlin - Science")
-//                    Text("Burns - English")
-//                    Text("Wold - Math")
-//                    Text("Ludois - Math")
-//                }
-//                VStack(){
-//                    Text("Doherty - Science")
-//                    Text("Poulos - English")
-//                    Text("Dubinski - English")
-//                    Text("Wilk - Math")
-//                    Text("Blazek - SS")
-//                }
-//                VStack(){
-//                    Text("Johnson - Science (B/C Lunch)")
-//                    Text("Morley - Science (A/B Lunch)")
-//                    Text("Brownley - English (A/B Lunch)")
-//                    Text("Silver - Math (A/C Lunch)")
-//                    Text("Skarb - Math (B/C Lunch)")
-//                    Text("Bravo - Spanish (B/C Lunch)")
-//                }
-//                VStack(){
-//                    Text("Caccamo - Science")
-//                    Text("Barry - Science")
-//                    Text("Yalda - Math")
-//                    Text("Kalchbrenner - English")
-//                    Text("Treutler - Spanish")
-//                }
-//            }
-//        }
-//    }
-//}

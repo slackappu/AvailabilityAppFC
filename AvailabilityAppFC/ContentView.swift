@@ -5,7 +5,6 @@ struct ContentView: View {
     @State var wakeUp = Date.now
     @State var colorDay = true
     var body: some View {
-        
         ZStack {
             VStack {
                 HStack {
@@ -14,15 +13,21 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "arrow.left")
                     }
+                    .font(.largeTitle)
+                    .padding()
                     
                     DatePicker("", selection: $wakeUp, displayedComponents: .date)
                         .labelsHidden()
+                        .scaleEffect(1.5)
+                        .frame(width: 150)
                     
                     Button {
                         changeDay(by: 1)
                     } label: {
                         Image(systemName: "arrow.right")
                     }
+                    .font(.largeTitle)
+                    .padding()
                 }
                 .foregroundStyle(isADay(for: wakeUp) ? .brown : .orange)
                 // switches data based on whether its an A day or not
@@ -31,10 +36,10 @@ struct ContentView: View {
                 } else {
                     ADayView(wakeUp: $wakeUp)
                 }
-                
-                Spacer() // optional, but helps push content upward
+            Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            
             
             VStack {
                 Circle()
@@ -46,7 +51,6 @@ struct ContentView: View {
         }
        // .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
         .animation(.easeInOut(duration: 0.25), value: wakeUp)
-
     }
     
     enum Subject {
@@ -64,16 +68,7 @@ struct ContentView: View {
             wakeUp = newDate
         }
     }
-    
 }
-
-
-
-
-
-
-
-
 
 
 
