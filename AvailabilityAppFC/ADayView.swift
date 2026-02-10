@@ -8,24 +8,24 @@ import SwiftUI
 
 struct ADayView: View {
     @Binding var wakeUp: Date
-
+    
     var body: some View {
-        Grid(horizontalSpacing: 25, verticalSpacing: 16) {
-
+        Grid(horizontalSpacing: 25, verticalSpacing: 20) {
+            
             GridRow {
                 blockTitle("Block 1")
                 blockTitle("Block 2")
                 blockTitle("Block 3")
                 blockTitle("Block 4")
             }
-
+            
             GridRow {
                 blockTime("(8:20–9:45)")
                 blockTime("(9:50–11:20)")
                 blockTime("(11:25–1:40)")
                 blockTime("(1:45–3:10)")
             }
-
+            
             GridRow {
                 classList(block1Classes)
                 classList(block2Classes)
@@ -33,11 +33,17 @@ struct ADayView: View {
                 classList(block4Classes)
             }
         }
+        .frame(maxHeight: .infinity)
         .padding()
     }
-
-
-
+        
+    
+    
+    
+    //                          |||||||
+    // needed for organizations vvvvvvv
+    
+    
     @ViewBuilder
     func blockTitle(_ text: String) -> some View {
         Text(text)
@@ -46,45 +52,48 @@ struct ADayView: View {
             .underline()
             .frame(maxWidth: .infinity)
     }
-
+    
     @ViewBuilder
     func blockTime(_ text: String) -> some View {
         Text(text)
             .font(.title)
             .frame(maxWidth: .infinity)
     }
-
+    
     @ViewBuilder
     func classList(_ classes: [ClassInfo]) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             ForEach(classes) { item in
                 ClassBox(classInfo: item)
             }
+            Spacer()
         }
-        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .gridCellUnsizedAxes(.vertical)
     }
 }
 
 
+
 struct ClassBox: View {
     let classInfo: ClassInfo
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(classInfo.teacher)
                 .font(.headline)
-
+            
             Text(classInfo.subject)
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-
+            
             if let extra = classInfo.extra {
                 Text(extra)
                     .font(.caption)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.black)
             }
         }
-        .padding(10)
+        .padding(20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 12)
@@ -96,7 +105,7 @@ struct ClassBox: View {
         )
     }
     
-    
+    //sets colors for different subjects
     
     var subjectColor: Color {
         switch classInfo.subject {
