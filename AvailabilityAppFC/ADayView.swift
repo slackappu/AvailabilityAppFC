@@ -85,15 +85,15 @@ struct ClassBox: View {
             
             Text(classInfo.subject)
                 .font(.subheadline)
-                .foregroundColor(.secondary)
+                .foregroundColor(.black)
             
             if let extra = classInfo.extra {
                 Text(extra)
                     .font(.caption)
-                    .foregroundColor(.black)
+                    .foregroundColor(.secondary)
             }
         }
-        .padding(20)
+        .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 12)
@@ -110,17 +110,17 @@ struct ClassBox: View {
     var subjectColor: Color {
         switch classInfo.subject {
         case "Math":
-            return .orange
+            return .blue
         case "Science":
             return .green
         case "English":
-            return .purple
-        case "French":
-            return .blue
-        case "Social Studies":
             return .red
+        case "French":
+            return .purple
+        case "Social Studies":
+            return .orange
         default:
-            return .gray
+            return .purple
         }
     }
 }
