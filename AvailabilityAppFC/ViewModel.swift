@@ -11,7 +11,45 @@ func fetchCSVData() {
     }
 }
 
-
+let teachers = [
+    Teacher(name: "Marks", email: "chris.marks@d214.org"),
+    Teacher(name: "Wiggin", email: "daniel.wiggin@d214.org"),
+    Teacher(name: "Hirschauer", email: "brian.hirschauer@d214.org"),
+    Teacher(name: "Heintzelman", email: "jonathan.heintzelman@d214.org"),
+    Teacher(name: "Spiering", email: "kristen.spiering@d214.org"),
+    Teacher(name: "Manthey", email: "kent.manthey@d214.org"),
+    Teacher(name: "Olsen", email: "mikayla.olsen@d214.org"),
+    Teacher(name: "Justeau", email: "annelaure.champetier@d214.org"),
+    Teacher(name: "Cassidy", email: "chris.cassidy1@d214.org"),
+    Teacher(name: "Michelin", email: "matthew.micheli@d214.org"),
+    Teacher(name: "Ballarini", email: "jackie.ballarin@d214.org"),
+    Teacher(name: "Kiepura", email: "chris.kiepura@d214.org"),
+    Teacher(name: "Pataky", email: "kelley.pataky@d214.org"),
+    Teacher(name: "Connell", email: "britt.connell@d214.org"),
+    Teacher(name: "Carlisle", email: "timothy.carlisle@d214.org"),
+    Teacher(name: "Decaluwe", email:  "nyssa.decaluwe@d214.org"),
+    Teacher(name: "Finlayson", email: "andy.finlayson@d214.org"),
+    Teacher(name: "Moehrlin", email: "gregory.moehrli@d214.org"),
+    Teacher(name: "Burns", email: "jaime.burns@d214.org"),
+    Teacher(name: "Wold", email: "shannon.wold@d214.org"),
+    Teacher(name: "Ludois", email: "courtney.ludois@d214.org"),
+    Teacher(name: "Doherty", email: "smitha.doherty@d214.org"),
+    Teacher(name: "Poulos", email: "zachary.poulos@d214.org"),
+    Teacher(name: "Dubinski", email: "stacy.dubinski@d214.org"),
+    Teacher(name: "Wilk", email: "celina.wilk@d214.org"),
+    Teacher(name: "Blazek", email: "jodi.blazek@d214.org"),
+    Teacher(name: "Johnson", email: "eric.johnson@d214.org"),
+    Teacher(name: "Morley", email: "niki.morley@d214.org"),
+    Teacher(name: "Brownley", email: "walter.brownley@d214.org"),
+    Teacher(name: "Silver", email: "samuel.silver@d214.org"),
+    Teacher(name: "Skarb", email: "keri.skarb@d214.org"),
+    Teacher(name: "Bravo", email: "cristina.bravo@d214.org"),
+    Teacher(name: "Caccamo", email: "alyssa.caccamo@d214.org"),
+    Teacher(name: "Barry", email: "dawn.barry@d214.org"),
+    Teacher(name: "Yalda", email: "heather.yalda@d214.org"),
+    Teacher(name: "Kalchbrenner", email: "amanda.kalchbrenner@d214.org"),
+    Teacher(name: "Treutler", email: "erin.treutler@d214.org")
+]
 
 
 // Marks - chris.marks@d214.org

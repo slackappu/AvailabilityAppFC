@@ -7,6 +7,7 @@
 import SwiftUI
 struct BDayView: View {
     @Binding var wakeUp: Date
+    
     var body: some View {
         Grid(horizontalSpacing: 25, verticalSpacing: 16) {
             
@@ -36,6 +37,7 @@ struct BDayView: View {
                     "Dubinski - English",
                     "Wilk - Math",
                     "Blazek - SS"
+                    
                 ])
                 classList([
                     "Johnson - Science (B/C Lunch)",
