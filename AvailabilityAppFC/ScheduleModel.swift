@@ -40,7 +40,9 @@ let schoolHolidays: [String] = [
     "04-08-2026",
     "04-09-2026",
     "05-25-2026",
-    
+    "05-27-2026",
+    "05-28-2026",
+    "05-29-2026"
 ]
 
 func isSchoolDay(_ date: Date) -> Bool {
