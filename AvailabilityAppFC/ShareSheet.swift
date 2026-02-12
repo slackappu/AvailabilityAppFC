@@ -13,3 +13,26 @@ struct ShareSheet: UIViewControllerRepresentable {
 
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
+
+struct TeacherEmailSheet: View {
+    let classInfo: ClassInfo
+    @State var showShare = false
+
+    var body: some View {
+        VStack(spacing: 20) {
+
+            Text(classInfo.teacher)
+                .font(.title)
+                .bold()
+
+            Text(classInfo.subject)
+                .foregroundColor(.secondary)
+
+        }
+        .padding()
+        .sheet(isPresented: $showShare) {
+            ShareSheet(activityItems: [classInfo.email])
+        }
+    }
+        
+}
