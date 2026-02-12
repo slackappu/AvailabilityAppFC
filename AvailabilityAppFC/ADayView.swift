@@ -130,35 +130,38 @@ struct ClassInfo: Identifiable {
     let teacher: String
     let subject: String
     let extra: String?
+    let email: String
 }
 
 
 // organizes teachers w/subjects & lunches
 
 let block1Classes = [
-    ClassInfo(teacher: "Marks", subject: "Science", extra: nil),
-    ClassInfo(teacher: "Wiggin", subject: "English", extra: nil),
-    ClassInfo(teacher: "Hirschauer", subject: "Math", extra: nil)
+    ClassInfo(teacher: "Marks", subject: "Science", extra: nil, email: "chris.marks@d214.org"),
+    ClassInfo(teacher: "Wiggin", subject: "English", extra: nil, email: "daniel.wiggin@d214.org"),
+    ClassInfo(teacher: "Hirschauer", subject: "Math", extra: nil, email: "brian.hirschauer@d214.org")
 ]
 
 let block2Classes = [
-    ClassInfo(teacher: "Heintzelman", subject: "Science", extra: nil),
-    ClassInfo(teacher: "Spiering", subject: "English", extra: nil),
-    ClassInfo(teacher: "Manthey", subject: "English", extra: nil),
-    ClassInfo(teacher: "Olsen", subject: "Math", extra: nil),
-    ClassInfo(teacher: "Justeau", subject: "French", extra: nil)
+    ClassInfo(teacher: "Heintzelman", subject: "Science", extra: nil, email: "jonathan.heintzelman@d214.org"),
+    ClassInfo(teacher: "Spiering", subject: "English", extra: nil, email: "kristen.spiering@d214.org"),
+    ClassInfo(teacher: "Manthey", subject: "English", extra: nil, email: "kent.manthey@d214.org"),
+    ClassInfo(teacher: "Olsen", subject: "Math", extra: nil, email: "mikayla.olsen@d214.org"),
+    ClassInfo(teacher: "Justeau", subject: "French", extra: nil, email: "annelaure.champetier@d214.org")
 ]
 
 let block3Classes = [
-    ClassInfo(teacher: "Cassidy", subject: "Science", extra: "A/B Lunch"),
-    ClassInfo(teacher: "Michelin", subject: "English", extra: "A/B Lunch"),
-    ClassInfo(teacher: "Ballarini", subject: "Math", extra: "A/B Lunch"),
-    ClassInfo(teacher: "Kiepura", subject: "Math", extra: "B/C Lunch")
+    ClassInfo(teacher: "Cassidy", subject: "Science", extra: "A/B Lunch", email: "chris.cassidy1@d214.org"),
+    ClassInfo(teacher: "Michelin", subject: "English", extra: "A/B Lunch", email: "matthew.micheli@d214.org"),
+    ClassInfo(teacher: "Ballarini", subject: "Math", extra: "A/B Lunch", email: "jackie.ballarin@d214.org"),
+    ClassInfo(teacher: "Kiepura", subject: "Math", extra: "B/C Lunch", email: "chris.kiepura@d214.org")
 ]
 
 let block4Classes = [
-    ClassInfo(teacher: "Pataky", subject: "Science", extra: nil),
-    ClassInfo(teacher: "Connell", subject: "English", extra: nil),
-    ClassInfo(teacher: "Carlisle", subject: "Math", extra: nil),
-    ClassInfo(teacher: "Decaluwe", subject: "Social Studies", extra: nil)
+    ClassInfo(teacher: "Pataky", subject: "Science", extra: nil, email: "kelley.pataky@d214.org"),
+    ClassInfo(teacher: "Connell", subject: "English", extra: nil, email: "britt.connell@d214.org"),
+    ClassInfo(teacher: "Carlisle", subject: "Math", extra: nil, email: "timothy.carlisle@d214.org"),
+    ClassInfo(teacher: "Decaluwe", subject: "Social Studies", extra: nil, email: "nyssa.decaluwe@d214.org")
 ]
+
+
