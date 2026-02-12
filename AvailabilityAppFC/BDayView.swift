@@ -71,37 +71,38 @@ struct BDayView: View {
 
 
 let block5Classes = [
-    ClassInfo(teacher: "Finlayson", subject: "Science", extra: nil),
-    ClassInfo(teacher: "Moehrlin", subject: "Science", extra: nil),
-    ClassInfo(teacher: "Burns", subject: "English", extra: nil),
-    ClassInfo(teacher: "Wold", subject: "Math", extra: nil),
-    ClassInfo(teacher: "Ludois", subject: "Math", extra: nil)
+    ClassInfo(teacher: "Finlayson", subject: "Science", extra: nil, email: "andy.finlayson@d214.org"),
+    ClassInfo(teacher: "Moehrlin", subject: "Science", extra: nil, email: "gregory.moehrli@d214.org"),
+    ClassInfo(teacher: "Burns", subject: "English", extra: nil, email: "jaime.burns@d214.org"),
+    ClassInfo(teacher: "Wold", subject: "Math", extra: nil, email: "shannon.wold@d214.org"),
+    ClassInfo(teacher: "Ludois", subject: "Math", extra: nil, email: "courtney.ludois@d214.org")
 ]
 
 let block6Classes = [
-    ClassInfo(teacher: "Doherty", subject: "Science", extra: nil),
-    ClassInfo(teacher: "Poulos", subject: "English", extra: nil),
-    ClassInfo(teacher: "Dubinski", subject: "English", extra: nil),
-    ClassInfo(teacher: "Wilk", subject: "Math", extra: nil),
-    ClassInfo(teacher: "Blazek", subject: "Social Studies", extra: nil)
+    ClassInfo(teacher: "Doherty", subject: "Science", extra: nil, email: "smitha.doherty@d214.org"),
+    ClassInfo(teacher: "Poulos", subject: "English", extra: nil, email: "zachary.poulos@d214.org"),
+    ClassInfo(teacher: "Dubinski", subject: "English", extra: nil, email: "stacy.dubinski@d214.org"),
+    ClassInfo(teacher: "Wilk", subject: "Math", extra: nil, email: "celina.wilk@d214.org"),
+    ClassInfo(teacher: "Blazek", subject: "Social Studies", extra: nil, email: "jodi.blazek@d214.org")
 ]
 
 let block7Classes = [
-    ClassInfo(teacher: "Johnson", subject: "Science", extra: "B/C Lunch"),
-    ClassInfo(teacher: "Morley", subject: "Science", extra: "A/B Lunch"),
-    ClassInfo(teacher: "Brownley", subject: "English", extra: "A/B Lunch"),
-    ClassInfo(teacher: "Silver", subject: "Math", extra: "A/C Lunch"),
-    ClassInfo(teacher: "Skarb", subject: "Math", extra: "B/C Lunch"),
-    ClassInfo(teacher: "Bravo", subject: "Spanish", extra: "B/C Lunch")
+    ClassInfo(teacher: "Johnson", subject: "Science", extra: "B/C Lunch", email: "eric.johnson@d214.org"),
+    ClassInfo(teacher: "Morley", subject: "Science", extra: "A/B Lunch", email: "niki.morley@d214.org"),
+    ClassInfo(teacher: "Brownley", subject: "English", extra: "A/B Lunch", email: "walter.brownley@d214.org"),
+    ClassInfo(teacher: "Silver", subject: "Math", extra: "A/C Lunch", email: "samuel.silver@d214.org"),
+    ClassInfo(teacher: "Skarb", subject: "Math", extra: "B/C Lunch", email: "keri.skarb@d214.org"),
+    ClassInfo(teacher: "Bravo", subject: "Spanish", extra: "B/C Lunch", email: "cristina.bravo@d214.org")
 ]
 
 let block8Classes = [
-    ClassInfo(teacher: "Caccamo", subject: "Science", extra: nil),
-    ClassInfo(teacher: "Barry", subject: "Science", extra: nil),
-    ClassInfo(teacher: "Yalda", subject: "Math", extra: nil),
-    ClassInfo(teacher: "Kalchbrenner", subject: "English", extra: nil),
-    ClassInfo(teacher: "Treutler", subject: "Spanish", extra: nil)
+    ClassInfo(teacher: "Caccamo", subject: "Science", extra: nil, email: "alyssa.caccamo@d214.org"),
+    ClassInfo(teacher: "Barry", subject: "Science", extra: nil, email: "dawn.barry@d214.org"),
+    ClassInfo(teacher: "Yalda", subject: "Math", extra: nil, email: "heather.yalda@d214.org"),
+    ClassInfo(teacher: "Kalchbrenner", subject: "English", extra: nil, email: "amanda.kalchbrenner@d214.org"),
+    ClassInfo(teacher: "Treutler", subject: "Spanish", extra: nil, email: "erin.treutler@d214.org")
 ]
+
 
 
 
