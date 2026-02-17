@@ -77,12 +77,17 @@ struct ADayView: View {
 
 struct ClassBox: View {
     let classInfo: ClassInfo
+    @State var showEmailSheet = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(classInfo.teacher)
-                .font(.headline)
-            
+            Button {
+                showEmailSheet = true
+            } label: {
+                Text(classInfo.teacher)
+                    .font(.headline)
+            }
+
             Text(classInfo.subject)
                 .font(.subheadline)
                 .foregroundColor(.black)
@@ -103,6 +108,9 @@ struct ClassBox: View {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(subjectColor, lineWidth: 1.5)
         )
+        .sheet(isPresented: $showEmailSheet) {
+            TeacherEmailSheet(classInfo: classInfo)
+        }
     }
     
     //sets colors for different subjects
