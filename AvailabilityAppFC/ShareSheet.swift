@@ -27,11 +27,25 @@ struct TeacherEmailSheet: View {
 
             Text(classInfo.subject)
                 .foregroundColor(.secondary)
+            Button {
+                                    UIPasteboard.general.string = classInfo.email
+                                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                                    showShare = true
+                                } label: {
+                                    Text(classInfo.email)
+                                        .foregroundColor(.blue)
+                                        .underline()
+                                }
+
+                                Text("Tap to copy & share")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
 
         }
         .padding()
         .sheet(isPresented: $showShare) {
             ShareSheet(activityItems: [classInfo.email])
+
         }
     }
         
