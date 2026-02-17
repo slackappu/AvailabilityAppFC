@@ -36,7 +36,7 @@ struct ContentView: View {
                 } else {
                     ADayView(wakeUp: $wakeUp)
                 }
-            Spacer()
+                Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             
@@ -49,7 +49,7 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding()
         }
-       // .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
+        // .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
         .animation(.easeInOut(duration: 0.25), value: wakeUp)
     }
     

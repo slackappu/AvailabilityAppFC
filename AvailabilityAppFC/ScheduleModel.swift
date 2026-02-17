@@ -1,5 +1,6 @@
 import SwiftUI
 
+let today = Date()
 let schoolHolidays: [String] = [
     "09-01-2025",
     "09-23-2025",
