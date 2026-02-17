@@ -31,24 +31,40 @@ struct ContentView: View {
                 }
                 .foregroundStyle(isADay(for: wakeUp) ? .brown : .orange)
                 // switches data based on whether its an A day or not
-                if isADay(for: wakeUp) {
-                    BDayView(wakeUp: $wakeUp)
+                if isSchoolDay(wakeUp) {
+                    
+                    if isADay(for: wakeUp) {
+                        ADayView(wakeUp: $wakeUp)
+                    } else {
+                        BDayView(wakeUp: $wakeUp)
+                    }
+                    
                 } else {
-                    ADayView(wakeUp: $wakeUp)
+                    VStack(spacing: 20) {
+                        Text("No teachers available")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        
+                        Text("School is closed today.")
+                            .font(.title2)
+                    }
+                    .padding(.top, 50)
                 }
-                Spacer()
+                
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            
-            
-            VStack {
-                Circle()
-                    .frame(width: 50, height: 50)
-            }
-            .foregroundStyle(isADay(for: wakeUp) ? .brown : .orange)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-            .padding()
+            Spacer()
+        
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        
+        
+        VStack {
+            Circle()
+                .frame(width: 50, height: 50)
         }
+        .foregroundStyle(isADay(for: wakeUp) ? .brown : .orange)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+        .padding()
+    }
         // .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
         .animation(.easeInOut(duration: 0.25), value: wakeUp)
     }

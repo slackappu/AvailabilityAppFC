@@ -1,6 +1,5 @@
 import SwiftUI
 
-let today = Date()
 let schoolHolidays: [String] = [
     "09-01-2025",
     "09-23-2025",
@@ -46,6 +45,7 @@ let schoolHolidays: [String] = [
     "05-29-2026"
 ]
 
+
 func isSchoolDay(_ date: Date) -> Bool {
         let calendar = Calendar.current
         let weekday = calendar.component(.weekday, from: date)
@@ -67,7 +67,6 @@ func isSchoolDay(_ date: Date) -> Bool {
 
 func isADay(for date: Date) -> Bool {
     let calendar = Calendar.current
-    
     let startDate = calendar.date(from:DateComponents(year: 2025, month: 8, day: 13))!
     
     var current = startDate
