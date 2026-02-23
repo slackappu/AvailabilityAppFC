@@ -67,10 +67,8 @@ struct ContentView: View {
                     .animation(.easeInOut(duration: 0.25), value: wakeUp)
             }
         }
-        .foregroundStyle(isADay(for: wakeUp) ? .brown : .orange)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .padding()
-    }
         .background(Color(.systemBackground).ignoresSafeArea())
         // .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
         .animation(.easeInOut(duration: 0.25), value: wakeUp)
