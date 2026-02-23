@@ -31,25 +31,27 @@ struct ContentView: View {
                 }
                 .foregroundStyle(isADay(for: wakeUp) ? .brown : .orange)
                 // switches data based on whether its an A day or not
-                if isSchoolDay(wakeUp) {
-                    
-                    if isADay(for: wakeUp) {
-                        ADayView(wakeUp: $wakeUp)
+                
+                Group {
+                    if isSchoolDay(wakeUp) {
+                        if isADay(for: wakeUp) {
+                            ADayView(wakeUp: $wakeUp)
+                        } else {
+                            BDayView(wakeUp: $wakeUp)
+                        }
                     } else {
-                        BDayView(wakeUp: $wakeUp)
+                        VStack(spacing: 20) {
+                            Text("No teachers available")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                            
+                            Text("School is closed today.")
+                                .font(.title2)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
-                    
-                } else {
-                    VStack(spacing: 20) {
-                        Text("No teachers available")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                        
-                        Text("School is closed today.")
-                            .font(.title2)
-                    }
-                    .padding(.top, 50)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             }
             Spacer()
