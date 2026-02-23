@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct ADayView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var wakeUp: Date
     
     var body: some View {
@@ -90,7 +91,7 @@ struct ClassBox: View {
 
             Text(classInfo.subject)
                 .font(.subheadline)
-                .foregroundColor(.black)
+                .foregroundColor(.primary)
             
             if let extra = classInfo.extra {
                 Text(extra)

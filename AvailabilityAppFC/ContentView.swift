@@ -3,6 +3,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var wakeUp = Date.now
+    @Environment(\.colorScheme) var colorScheme
     @State var colorDay = true
     var body: some View {
         ZStack {
@@ -65,6 +66,7 @@ struct ContentView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .padding()
     }
+        .background(Color(.systemBackground).ignoresSafeArea())
         // .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
         .animation(.easeInOut(duration: 0.25), value: wakeUp)
     }
