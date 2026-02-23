@@ -54,13 +54,18 @@ struct ContentView: View {
                 
             }
             Spacer()
-        
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        
-        
-        VStack {
-            Circle()
-                .frame(width: 50, height: 50)
+            
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            
+            
+            if isSchoolDay(wakeUp) {
+                Circle()
+                    .fill(isADay(for: wakeUp) ? .brown : .orange)
+                    .frame(width: 50, height: 50)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                    .padding()
+                    .animation(.easeInOut(duration: 0.25), value: wakeUp)
+            }
         }
         .foregroundStyle(isADay(for: wakeUp) ? .brown : .orange)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)

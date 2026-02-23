@@ -37,7 +37,7 @@ struct ADayView: View {
         .frame(maxHeight: .infinity)
         .padding()
     }
-        
+    
     
     
     
@@ -88,7 +88,7 @@ struct ClassBox: View {
                 Text(classInfo.teacher)
                     .font(.headline)
             }
-
+            
             Text(classInfo.subject)
                 .font(.subheadline)
                 .foregroundColor(.primary)
