@@ -79,7 +79,7 @@ struct ADayView: View {
 struct ClassBox: View {
     let classInfo: ClassInfo
     @State var showEmailSheet = false
-    
+    @State var showToast = false
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Button {
@@ -113,6 +113,11 @@ struct ClassBox: View {
             Button("Copy Email") {
                 UIPasteboard.general.string = classInfo.email
                 UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                
+                showToast = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    showToast = false
+                })
             }
             
             Button("Cancel", role: .cancel) {}

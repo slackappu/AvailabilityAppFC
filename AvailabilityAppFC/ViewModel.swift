@@ -1,5 +1,10 @@
 
 import SwiftUI
+internal import Combine
+
+class AppData: ObservableObject {
+    @Published var showToast = false
+}
 
 func fetchCSVData() {
     
