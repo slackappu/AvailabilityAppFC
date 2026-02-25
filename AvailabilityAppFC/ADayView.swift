@@ -48,10 +48,10 @@ struct ADayView: View {
     @ViewBuilder
     func blockTitle(_ text: String) -> some View {
         Text(text)
-            .font(.largeTitle)
             .bold()
             .underline()
             .frame(maxWidth: .infinity)
+            .font(.system(.largeTitle, design: .serif))
     }
     
     @ViewBuilder

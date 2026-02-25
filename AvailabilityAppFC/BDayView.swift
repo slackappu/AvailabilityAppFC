@@ -43,7 +43,7 @@ struct BDayView: View {
     @ViewBuilder
     func blockTitle(_ text: String) -> some View {
         Text(text)
-            .font(.largeTitle)
+            .font(.system(.largeTitle, design: .serif))
             .bold()
             .underline()
             .frame(maxWidth: .infinity)
