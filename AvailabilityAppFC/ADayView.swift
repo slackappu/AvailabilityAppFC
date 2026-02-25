@@ -109,8 +109,13 @@ struct ClassBox: View {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(subjectColor, lineWidth: 1.5)
         )
-        .sheet(isPresented: $showEmailSheet) {
-            TeacherEmailSheet(classInfo: classInfo)
+        .confirmationDialog(classInfo.teacher, isPresented: $showEmailSheet, titleVisibility: .visible) {
+            Button("Copy Email") {
+                UIPasteboard.general.string = classInfo.email
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            }
+            
+            Button("Cancel", role: .cancel) {}
         }
     }
     
