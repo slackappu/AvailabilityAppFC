@@ -5,6 +5,9 @@ struct ContentView: View {
     @State var wakeUp = Date.now
     @Environment(\.colorScheme) var colorScheme
     @State var colorDay = true
+    
+    
+    
     var body: some View {
         ZStack {
             VStack {
@@ -55,6 +58,16 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             }
+            .overlay(alignment: .bottom) {
+//                if showToast {
+//                    Text("Email Copied")
+//                        .font(.subheadline)
+//                        .padding()
+//                        .background(.ultraThinMaterial)
+//                        .clipShape(Capsule())
+//                        .shadow(radius: 4)
+//                }
+            }
             Spacer()
             
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -68,6 +81,7 @@ struct ContentView: View {
                     .padding()
                     .animation(.easeInOut(duration: 0.25), value: wakeUp)
             }
+                
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .padding()
