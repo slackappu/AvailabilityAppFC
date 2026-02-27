@@ -10,6 +10,7 @@ struct ADayView: View {
     @Environment(\.colorScheme) var colorScheme
     @Binding var wakeUp: Date
     
+    
     var body: some View {
         Grid(horizontalSpacing: 25, verticalSpacing: 20) {
             
@@ -79,7 +80,7 @@ struct ADayView: View {
 struct ClassBox: View {
     let classInfo: ClassInfo
     @State var showEmailSheet = false
-    @State var showToast = false
+    @EnvironmentObject var appData: AppData
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Button {
@@ -114,9 +115,9 @@ struct ClassBox: View {
                 UIPasteboard.general.string = classInfo.email
                 UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 
-                showToast = true
+                appData.showToast = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    showToast = false
+                    appData.showToast = false
                 })
             }
             

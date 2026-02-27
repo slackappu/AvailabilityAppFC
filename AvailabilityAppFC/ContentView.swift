@@ -5,8 +5,7 @@ struct ContentView: View {
     @State var wakeUp = Date.now
     @Environment(\.colorScheme) var colorScheme
     @State var colorDay = true
-    
-    
+    @StateObject var appData = AppData()
     
     var body: some View {
         ZStack {
@@ -59,14 +58,14 @@ struct ContentView: View {
                 
             }
             .overlay(alignment: .bottom) {
-//                if showToast {
-//                    Text("Email Copied")
-//                        .font(.subheadline)
-//                        .padding()
-//                        .background(.ultraThinMaterial)
-//                        .clipShape(Capsule())
-//                        .shadow(radius: 4)
-//                }
+                if appData.showToast {
+                    Text("Email Copied!")
+                        .font(.subheadline)
+                        .padding()
+                        .background(.ultraThinMaterial)
+                        .clipShape(Capsule())
+                        .shadow(radius: 4)
+                }
             }
             Spacer()
             
@@ -83,6 +82,7 @@ struct ContentView: View {
             }
                 
         }
+        .environmentObject(appData)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
         .padding()
         .background(Color(.systemBackground).ignoresSafeArea())
