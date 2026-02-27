@@ -34,7 +34,7 @@ struct ADayView: View {
                 classList(block4Classes)
             }
         }
-        .frame(maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .padding()
     }
     
@@ -70,7 +70,6 @@ struct ADayView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .gridCellUnsizedAxes(.vertical)
     }
 }
 
@@ -100,7 +99,7 @@ struct ClassBox: View {
             }
         }
         .padding(10)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 12)
                 .fill(subjectColor.opacity(0.2))
