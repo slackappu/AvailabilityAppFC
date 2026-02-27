@@ -2,8 +2,10 @@
 import SwiftUI
 internal import Combine
 
+// made this mainly for using showToast in contentview and aday
 class AppData: ObservableObject {
     @Published var showToast = false
+    @Published var classes: [ClassInfo] = []
 }
 
 func fetchCSVData() {
