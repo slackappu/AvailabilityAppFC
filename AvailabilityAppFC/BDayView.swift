@@ -52,7 +52,7 @@ struct BDayView: View {
     @ViewBuilder
     func blockTime(_ text: String) -> some View {
         Text(text)
-            .font(.title)
+            .font(.system(.title, design: .serif))
             .frame(maxWidth: .infinity)
     }
 
