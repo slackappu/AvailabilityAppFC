@@ -86,17 +86,17 @@ struct ClassBox: View {
                 showEmailSheet = true
             } label: {
                 Text(classInfo.teacher)
-                    .font(.headline)
+                    .font(.title2)
             }
             
             Text(classInfo.subject)
-                .font(.subheadline)
+                .font(.title3)
                 .foregroundColor(.primary)
             
             if let extra = classInfo.extra {
                 Text(extra)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                    .font(.subheadline)
+                    .foregroundColor(.black)
             }
         }
         .padding(10)
