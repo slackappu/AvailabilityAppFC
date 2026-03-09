@@ -81,6 +81,7 @@ struct ClassBox: View {
     @State var showEmailSheet = false
     @State var showShareSheet = false
     @EnvironmentObject var appData: AppData
+
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Button {
@@ -89,48 +90,54 @@ struct ClassBox: View {
                 Text(classInfo.teacher)
                     .font(.title2)
             }
-            
+
             Text(classInfo.subject)
                 .font(.title3)
                 .foregroundColor(.primary)
-            
+
             if let extra = classInfo.extra {
                 Text(extra)
                     .font(.subheadline)
-                    .foregroundColor(.black)
+                    .foregroundColor(.secondary)
             }
-            .padding(10)
-            .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(subjectColor.opacity(0.2))
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(subjectColor, lineWidth: 1.5)
-            )
-            .confirmationDialog(classInfo.teacher, isPresented: $showEmailSheet, titleVisibility: .visible) {
-                Button("Copy & Share Email") {
-                    UIPasteboard.general.string = classInfo.email
-                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
-                    showShareSheet.toggle()
-                    
-                    appData.showToast = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                        appData.showToast = false
-                    })
+        }
+        .padding(10)
+        .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(subjectColor.opacity(0.2))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(subjectColor, lineWidth: 1.5)
+        )
+        .confirmationDialog(
+            classInfo.teacher,
+            isPresented: $showEmailSheet,
+            titleVisibility: .visible
+        ) {
+
+            Button("Copy & Share Email") {
+                UIPasteboard.general.string = classInfo.email
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+
+                showShareSheet.toggle()
+
+                appData.showToast = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    appData.showToast = false
                 }
-                
-                Button("Cancel", role: .cancel) {}
             }
+
+            Button("Cancel", role: .cancel) {}
+        }
         .sheet(isPresented: $showShareSheet) {
             ShareSheet(activityItems: [classInfo.email])
                 .presentationDetents([.medium])
         }
     }
-    
-    //sets colors for different subjects
-    
+
+    // sets colors for different subjects
     var subjectColor: Color {
         switch classInfo.subject {
         case "Math":
@@ -148,6 +155,7 @@ struct ClassBox: View {
         }
     }
 }
+
 
 struct ClassInfo: Identifiable {
     let id = UUID()
