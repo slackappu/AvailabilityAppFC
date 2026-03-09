@@ -79,6 +79,7 @@ struct ADayView: View {
 struct ClassBox: View {
     let classInfo: ClassInfo
     @State var showEmailSheet = false
+    @State var showShareSheet = false
     @EnvironmentObject var appData: AppData
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -98,29 +99,33 @@ struct ClassBox: View {
                     .font(.subheadline)
                     .foregroundColor(.black)
             }
-        }
-        .padding(10)
-        .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(subjectColor.opacity(0.2))
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(subjectColor, lineWidth: 1.5)
-        )
-        .confirmationDialog(classInfo.teacher, isPresented: $showEmailSheet, titleVisibility: .visible) {
-            Button("Copy Email") {
-                UIPasteboard.general.string = classInfo.email
-                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            .padding(10)
+            .frame(maxWidth: .infinity, minHeight: 100, alignment: .leading)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(subjectColor.opacity(0.2))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(subjectColor, lineWidth: 1.5)
+            )
+            .confirmationDialog(classInfo.teacher, isPresented: $showEmailSheet, titleVisibility: .visible) {
+                Button("Copy & Share Email") {
+                    UIPasteboard.general.string = classInfo.email
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    showShareSheet.toggle()
+                    
+                    appData.showToast = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                        appData.showToast = false
+                    })
+                }
                 
-                appData.showToast = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    appData.showToast = false
-                })
+                Button("Cancel", role: .cancel) {}
             }
-            
-            Button("Cancel", role: .cancel) {}
+        .sheet(isPresented: $showShareSheet) {
+            ShareSheet(activityItems: [classInfo.email])
+                .presentationDetents([.medium])
         }
     }
     
