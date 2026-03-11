@@ -141,11 +141,11 @@ struct ClassBox: View {
     var subjectColor: Color {
         switch classInfo.subject {
         case "Math":
-            return .blue
+            return .red
         case "Science":
             return .green
         case "English":
-            return .red
+            return .blue
         case "French":
             return .purple
         case "Social Studies":
