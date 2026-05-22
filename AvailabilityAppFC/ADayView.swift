@@ -124,7 +124,7 @@ struct ClassBox: View {
                 showShareSheet.toggle()
 
                 appData.showToast = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     appData.showToast = false
                 }
             }
