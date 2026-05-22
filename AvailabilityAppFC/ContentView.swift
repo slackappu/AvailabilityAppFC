@@ -32,7 +32,7 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .padding()
                 }
-                .foregroundStyle(isADay(for: wakeUp) ? .brown : .orange)
+                .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
                 // switches data based on whether its an A day or not
                 
                 Group {
@@ -60,11 +60,14 @@ struct ContentView: View {
             .overlay(alignment: .bottom) {
                 if appData.showToast {
                     Text("Email Copied!")
-                        .font(.subheadline)
-                        .padding()
+                        .animation(.easeInOut(duration: 0.5), value: wakeUp)
+                        .font(.title2)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 16)
                         .background(.ultraThinMaterial)
                         .clipShape(Capsule())
                         .shadow(radius: 4)
+                        
                 }
             }
             Spacer()
@@ -74,7 +77,7 @@ struct ContentView: View {
             
             if isSchoolDay(wakeUp) {
                 Circle()
-                    .fill(isADay(for: wakeUp) ? .brown : .orange)
+                    .fill(isADay(for: wakeUp) ? .orange : .brown)
                     .frame(width: 50, height: 50)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                     .padding()
@@ -89,7 +92,7 @@ struct ContentView: View {
         // .foregroundStyle(isADay(for: wakeUp) ? .orange : .brown)
         .animation(.easeInOut(duration: 0.25), value: wakeUp)
     }
-    
+
     enum Subject {
         case Science
         case History
