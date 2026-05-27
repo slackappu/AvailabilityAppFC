@@ -79,7 +79,7 @@ func isADay(for date: Date) -> Bool {
         current = calendar.date(byAdding: .day, value: 1, to: current)!
     }
     
-    return schoolDayCount % 2 == 0
+    return schoolDayCount % 2 == 1
     
 }
 
